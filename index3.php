@@ -3,7 +3,9 @@
 	include("include/common.php");
 
 	$data = db_select("select * from danhmuc");
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +21,11 @@
 	<header class="header">
 		<div class="logo">
 			<img src="asset/IMG/cute.jpg" width="150" heigh="150" alt="">
+			<h1>Admin</h1>
 		</div>
 
 		<div class="mb-3">
-			<a href="./admin/danhmuc/create.php" class="btn btn-a">Thêm mới lớp</a>
+			<a href="./admin/danhmuc/create.php" class="btn btn-a">Thêm Danh sách mới</a>
 			<?php if(is_logged()) { ?>
 				<a href="./logout.php" class="btn btn-a">TRANG ĐĂNG XUẤT</a>
 			<?php } else {?>
@@ -38,7 +41,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Danh Sách Sản Phẩm</th>
+					<th>Danh Mục Sản Phẩm</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -49,20 +52,23 @@
 						$Ten_DanhMuc = $x["Ten_DanhMuc"];
 
 						echo <<<EOL
-						<tr>
+					<tr>
 						<td>$id</td>
 						<td>$Ten_DanhMuc</td>
 						<td>
 							<a href="./indexSanPham.php" class="btn btn-a">Chi tiết</a>
 							<a href="./admin/danhmuc/edit.php?id=$id" class="btn btn-b">Sửa</a>
-							<a href="admin/danhmuc/delete.php?id=$id" class="btn btn-c">Xóa</a>
+							<a href="./admin/danhmuc/delete.php?id=$id" class="btn btn-c">Xóa</a>
 						</td>
-				</tr>
+					</tr>
 EOL;
 					}
 				?>
 			</tbody>
 		</table>
+		<br>
+		<hr>
+		<a href="./index4.php" class="btn btn-a">Trang Admin sản phẩm </a>
 	</div>
 </body>
 </html>

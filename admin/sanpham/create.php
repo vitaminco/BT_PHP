@@ -6,17 +6,17 @@
     $TenSanPham =  $_POST["TenSanPham"] ?? "";
     $Gia =  $_POST["Gia"] ?? "";
     $NgayBan =  $_POST["NgayBan"] ?? "";
-    $Hinh = upload_and_return_filename("Hinh");
+    $filename = upload_and_return_filename("img_path");
     $Id_DanhMuc =  $_POST["Id_DanhMuc"] ?? "";
     $ThongTin =  $_POST["ThongTin"] ?? "";
-    $sql = "insert into sanpham(TenSanPham, Gia, NgayBan, Hinh, Id_DanhMuc, ThongTin) values('$Id_DanhMuc
+    $sql = "insert into sanpham(TenSanPham, Gia, NgayBan, img_path, Id_DanhMuc, ThongTin)
         values(?,?,?,?,?,?)";
 
-    $params = [$TenSanPham, $Gia, $NgayBan , $Hinh,  $Id_DanhMuc, $ThongTin];
+    $params = [$TenSanPham, $Gia, $NgayBan , $filename,  $Id_DanhMuc, $ThongTin];
     db_execute($sql, $params);
     
     js_alert("thêm mới thành công");
-    redirect_to("/indexSanPham.php");
+    redirect_to("./index4.php");
 }
 
 $_title = "Cập nhật Sản Phẩm";
@@ -33,7 +33,7 @@ include("../_header.php");
             <label for="">ngày bán</label>
             <input type="date" name="NgayBan" required> <br>
             <label for="">chọn ảnh</label>
-            <input type="file" name="Hinh" accept=".png, .ipg, .jpeg"> <br>
+            <input type="file" name="img_path" accept=".png, .ipg, .jpeg"> <br>
 
             <label for="">id danh mục</label>
             <select name="Id_DanhMuc" id="">

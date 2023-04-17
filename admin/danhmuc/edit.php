@@ -26,7 +26,7 @@
 
     <form method="post">
         <label for="">Cập nhật danh sách sản phẩm</label> <br>
-        <input type="text" name="Ten_DanhMuc" required value="<?php echo $data["class_name"]?>"> <!--required để hiện cái thông báo chưa nhập vào thêm valua để cho nó hiện dữ liệu lên-->
+        <input type="text" name="Ten_DanhMuc" required value="<?php echo $data["Ten_DanhMuc"]?>"> <!--required để hiện cái thông báo chưa nhập vào thêm valua để cho nó hiện dữ liệu lên-->
 
         <input type="submit" name="capnhat" value="Cập nhật">
     </form>

@@ -19,17 +19,16 @@
         $TenSanPham =  $_POST["TenSanPham"];
         $Gia =  $_POST["Gia"];
         $NgayBan =  $_POST["NgayBan"];
-        $Hinh =  $_POST["Hinh"];
+        $filename = upload_and_return_filename("img_path","sanpham/img");
         $Id_DanhMuc =  $_POST["Id_DanhMuc"];
         $ThongTin =  $_POST["ThongTin"];
         
-        $filename = upload_and_return_filename("Hinh","sanpham/img");
-        $sql = "update sanpham set TenSanPham = ?, Gia = ?, NgayBan = ? , Hinh = ?, Id_DanhMuc = ?, ThongTin = ? where id = ?";
+        $sql = "update sanpham set TenSanPham = ?, Gia = ?, NgayBan = ? , img_path = ?, Id_DanhMuc = ?, ThongTin = ? where id = ?";
 
-        $params = [$TenSanPham, $Gia, $NgayBan, $Hinh, $Id_DanhMuc, $ThongTin, $id];
+        $params = [$TenSanPham, $Gia, $NgayBan, $filename, $Id_DanhMuc, $ThongTin, $id];
         db_execute($sql, $params);
     
-        redirect_to("/indexSaPham.php");
+        redirect_to("/index4.php");
     }
 
     $_title = "Cập nhật sửa";
@@ -39,15 +38,20 @@
 <form method="post" enctype="multipart/form-data">
             <label for="">Thêm tên</label>
             <input type="text" name="TenSanPham" required> <br>
-            <label for="">Gía</label>
+            <label for="">Giá</label>
             <input type="text" name="Gia" required> <br>
             
             <br>
             <label for="">ngày bán</label>
             <input type="date" name="NgayBan" required> <br>
-            <label for="">chọn ảnh</label>
-            <input type="file" name="Hinh" accept=".png, .ipg, .jpeg"> <br>
-
+            
+            <label for="">Cập nhật hình</label>
+            <?php if(!empty($data["img_path"])) { ?>
+                <img src="<?php upload($data["img_path"]); ?>" width="100"/>
+                <br>
+            <?php }?>
+            <input type="file" name="img_path" accept=".png, .ipg, .jpeg"> <br> <hr>
+            
             <label for="">id danh mục</label>
             <select name="Id_DanhMuc" id="">
                 <option value=""> -- chọn một lớp --</option>

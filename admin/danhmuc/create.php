@@ -5,7 +5,7 @@
     check_login();
     if(is_method_post()){
         $name = $_POST["Ten_DanhMuc"];
-        $sql = "insert into classes values(default, ?)";
+        $sql = "insert into danhmuc values(default, ?)";
 
         $insert_success = db_execute($sql, [$name]);
         if($insert_success){

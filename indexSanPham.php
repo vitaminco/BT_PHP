@@ -208,7 +208,7 @@ IEN;
                 $TenSanPham = $item["TenSanPham"];
                 $Gia = $item["Gia"];
                 $NgayBan = $item["NgayBan"];
-                $Hinh = $item["Hinh"];
+                $img_path = $item["img_path"];
                 $Id_DanhMuc = $item["Id_DanhMuc"];
                 $ThongTin = $item["ThongTin"];
                 $Ten_DanhMuc = $item["Ten_DanhMuc"];
@@ -217,7 +217,7 @@ IEN;
                         <div class="grid__row-item">
                             <div class="home-product-item">
                                 <div class="home-product-item__img">
-                                    <img class="imgmain" src="asset/images/$Hinh" alt="" width="100%" height="300px">
+                                    <img class="imgmain" src="upload/$img_path" alt="" width="100%" height="300px">
                                 </div>
                                 <div class="home-product-item__infomation">
                                     <h4 class="home-product-item__name">Ten: $TenSanPham</h4>

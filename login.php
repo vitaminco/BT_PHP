@@ -66,7 +66,85 @@
     </style>
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar--lish">
+                        <li><a href="./Index.html"><img class="img--logo" src="./Asset/images/logo.png" alt=""></a></li>
+                        <li class="header__navbar--item" style="color: var(--primary-color);">RẠP CHIẾU PHIM MEGA</li>
+                    </ul>
+
+                    <ul class="header__navbar--lish">
+                        <li class="header__navbar--item notifi"> 
+                            <i class="fa-solid fa-bell"></i>
+                            THÔNG BÁO
+                            
+                            <div class="notifi__contain">
+                                <header class="notifi__header">
+                                    <h3>DANH SÁCH THÔNG BÁO MỚI</h3>
+                                </header>
+                                
+                                <a href="#" class="notifi__body">
+                                    <img src="./Asset/images/vongnhi.jpg" alt="">
+                                    <span>CÔ DÂU 8 TUỔI</span>
+                                </a>
+                               
+                            </div>
+                           
+                            
+                        </li>
+                        <li class="header__navbar--item notifi">
+                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            GIỎ HÀNG
+                            <div class="notifi__contain">
+                                <header class="notifi__header">
+                                    <h3>GIỎ CÁC BỘ PHIM ĐƯỢC MUA</h3>
+                                </header>
+                                
+                                <a href="#" class="notifi__body">
+                                    <img src="./Asset/images/vongnhi.jpg" alt="">
+                                    <span>CÔ DÂU 8 TUỔI</span>
+                                </a>
+                               
+                            </div>
+                        </li>
+                        <?php if(is_logged()) { ?>
+                            <i class="fa-solid fa-user" style="color: black;background-color: white;width: 34px;display: block;height: 30px;text-align: center;border-radius: 50px;font-size: 2.5rem;margin: 0 0 0 11px;"></i>
+                            <li class="header__navbar--item"><button  class="header__navbar--item--link header__navbar--item--link-login" ><a href="./logout.php" class="btn btn-a">ĐĂNG XUẤT</a></button></li>
+                            
+			            <?php } else {?>
+                            <li class="header__navbar--item"><button  class="header__navbar--item--link header__navbar--item--link-signin" ><a href="register.php">ĐĂNG KÍ</a></button></li>
+                            <li class="header__navbar--item"><button  class="header__navbar--item--link header__navbar--item--link-login" ><a href="login.php">ĐĂNG NHẬP</a></button></li>
+			            <?php }?>
+                    </ul>
+                </nav>
+                
+                <!-- tien ich -->
+                <nav class="tienich">
+                    <div class="tienich__blog">
+                        <ul class="tienich__blog-list">
+                            <li><a href="./indexFilms.html"  class="tienich__blog-item">LỊCH CHIẾU</a></li>
+                            <li><a href="./indexFilms.html" class="tienich__blog-item">PHIM</a></li>
+                            <li><a href="./indexGT.html" class="tienich__blog-item">RẠP & GIÁ VÉ</a></li>
+                            <li><a href="./IndexSL.html" class="tienich__blog-item">ƯU ĐÃI</a></li>
+                        </ul>
+                        
+                        <ul class="tienich__blog-list">
+                            <li class="tienich__blog-item">
+                                <a href="https://www.facebook.com/"><i class="icon__navbar fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li class="tienich__blog-item">
+                                <a href="https://www.instagram.com/?hl=en"><i class="icon__navbar fa-brands fa-square-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+                
+</header>
+
+
   <!-- PHẦN ĐĂNG NHẬP -->
   <div class="grid">
   <div id="Login__tab" class="loginTab">
@@ -118,6 +196,54 @@
                     </div>
     </div>
 </div>
+
+<div class="footer">
+            <div class="grid">
+            <div class="grid__row">
+                <div class="grid__colum-6">
+                    <div class="footer__left">
+                        <ul class="footer__left-list">
+                            <li class="footer__left-item"><a href="./indexFilms.html">LỊCH CHIẾU</a></li>
+                            <li class="footer__left-item"><a href="./indexFilms.html">PHIM</a></li>
+                            <li class="footer__left-item"><a href="./indexGT.html">RẠP & GIÁ VÉ</a></li>
+                            <li class="footer__left-item"><a href="./IndexSL.html">ƯU ĐÃI</a></li>
+                        </ul>
+                        <ul class="footer__left-list">
+                            <li class="footer__left-item"><a href="./indexGT.html">GIỚI THIỆU</a></li>
+                            <li class="footer__left-item"><a href="./IndexSL.html">SỰ KIỆN</a></li>
+                            <li class="footer__left-item"><a href="./IndexSL.html">DỊCH VỤ</a></li>
+                            <li class="footer__left-item"><a href="./indexGT.html">ĐIỀU KHOẢNG CHUNG</a></li>
+                            <li class="footer__left-item"><a href="./indexGT.html">LIÊN HỆ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid__colum-4">
+                    <div class="footer__right">
+                        <div class="hotline">
+                            <div class="hotline-list">
+                                <span>RẠP PHIM</span>
+                                <span>000000000</span>
+                            </div>
+                            <div class="hotline-img">
+                                <img src="./Asset/images/footer-phone.png" alt="">
+                            </div>
+                        </div>
+                    
+                        <div class="footer__img">
+                            <img src="./Asset/images/footer-star.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="grid">
+                    <p class="footer__text">No Coppyright 2023 - Bản quyền thuộc vể Công ty ABC</p>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 

@@ -8,7 +8,7 @@
     $data=db_select($sql_sel, [$id]);
     if (empty($data)){
         js_alert("Không có gì để xóa");
-        js_redirect_to("indexSanPham.php");
+        js_redirect_to("index4.php");
         die;
     }
 $data = $data[0];
@@ -17,5 +17,5 @@ $data = $data[0];
   //Xóa trong db
   db_execute($sql_del, [$id]);
   js_alert("Xóa thành công");
-  js_redirect_to("indexSanPham.php");
+  js_redirect_to("index4.php");
 ?>
