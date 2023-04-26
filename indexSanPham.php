@@ -2,7 +2,10 @@
 	include("include/common.php");
 
     $data = db_select("SELECT st.*, cls.Ten_DanhMuc FROM sanpham st
-                        left join danhmuc cls on st.Id_DanhMuc = cls.id");       
+                        left join danhmuc cls on st.Id_DanhMuc = cls.id");    
+                        
+    $data1 = db_select("SELECT ud.*, cls.Ten_DanhMuc FROM uudai ud
+                        left join danhmuc cls on ud.Id_DanhMuc = cls.id");       
 
 ?>
 <!---->
@@ -271,26 +274,27 @@ IEN;
                             <div class="uudai">
                                 <!--item uu dai-->
                                 <?php 
-                            foreach($data as $item){
+                            foreach($data1 as $item){
                                 $id = $item["id"];
                                 $TenUuDai = $item["TenUuDai"];
-                                $UuDai = $item["UuDai"];
+                                $UuDAI = $item["UuDAI"];
                                 $Start = $item["Start"];
                                 $End = $item["End"];
                                 $ThongTin = $item["ThongTin"];
                                 $HinhUuDai = $item["HinhUuDai"];
                                 
                                 echo <<<IEN
+                                
                                 <div class="container__evens">
                                     <a href="./indexGT.html" class="container__evens-link">
-                                        <img src="asset/images/$HinhUuDai" alt="">
-                                        
+                                        <img src="./Asset/images/mgs-lixi.jpg" alt="" width="320" height="300">
+    
                                         <div class="content__evens">
                                             <span>$TenUuDai</span>
                                         </div>
                                     </a>
                                     <span>Thời gian ưu đãi: $Start - $End</span>
-                                    <span class="container__evens-link-nhan">$UuDai</span>
+                                    <span class="container__evens-link-nhan">$UuDAI</span>
                                 </div>
 IEN;    
                             }

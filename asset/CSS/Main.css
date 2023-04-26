@@ -653,6 +653,15 @@ h3 {
     height: 80px;
 }
 
+.uudai {
+    display: flex;
+    max-height: 500px;
+    margin: 10px;
+    overflow-y: scroll;
+    padding: 0 139px;
+    border: 10px solid var(--black-color);
+}
+
 .colum-4--header-banner {
     margin-left: 6px;
     color: var(--text-color);
